@@ -15,6 +15,13 @@ import { RiddleWrapper, RiddleCandle, RiddleCandleContainer, SevenCandlesGlow, S
 
 import { SevenCandlesInstructions, SevenCandlesInstructionsContent, SevenCandlesInstructionsToggle, SevenCandlesInstructionsLink, SevenCandlesRelightButton, SevenCandlesButton } from "../styles/seven-candles.styles";
 
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+import util from "../services/util.service";
+
+const MySwal = withReactContent(Swal);
+
 class SecenCandlesComponent extends Component {
 
     constructor(props) {
@@ -119,7 +126,33 @@ class SecenCandlesComponent extends Component {
     render() {
 
         let { list, count } = this.state,
-            riddleCompeted = this.checkIfDone();
+            riddleCompleted = this.checkIfDone();
+
+        if(riddleCompleted)
+        {
+            MySwal.fire({
+                title: "Congratulations!!",
+                text: "You solved in "+ count + " steps.",
+                icon: "success",
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText: 'Challenge Friends!',
+                confirmButtonAriaLabel: 'Thumbs up, great!',
+                cancelButtonText: 'No, Thanks!'
+            }).then((result) => {
+                if(result.value)
+                {
+                    util.shareDialog({
+                        text: "Hey! I was able to solve the 7 candles riddle in " + count + " steps.\n\nCan you solve it fewer steps?",
+                        url: window.document.querySelector('link[rel=canonical]') ? (window.document.querySelector('link[rel=canonical]') && window.document.querySelector('link[rel=canonical]').href) : window.document.location.href,
+                        dialog: {
+                            score: count
+                        }
+                    });
+                } 
+            });
+        }
 
         return (
             <Layout>
@@ -148,16 +181,9 @@ class SecenCandlesComponent extends Component {
                     </SevenCandlesRelightButton>
 
                     <RiddleCandleCounter>
-                        Count: { count }
+                        No. of steps: { count }
                     </RiddleCandleCounter>
                     <SevenCandlesInstructions>
-                        {
-                            riddleCompeted && (
-                                <div>
-                                    Congrats.
-                                </div>
-                            )
-                        }
                         <SevenCandlesInstructionsToggle className="btn" href="#">
                             Instructions
                         </SevenCandlesInstructionsToggle>
