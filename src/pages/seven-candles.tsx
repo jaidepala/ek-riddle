@@ -10,10 +10,8 @@ import { Helmet } from "react-helmet";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-// import { SevenCandlesWrapper } from './seven.candles.styles';
-import { RiddleWrapper, RiddleCandle, RiddleCandleContainer, SevenCandlesGlow, SevenCandlesShadow, SevenCandlesInner, SevenCandlesOuter, RiddleCandleCounter } from "../styles/seven-candles.styles";
 
-import { SevenCandlesInstructions, SevenCandlesInstructionsContent, SevenCandlesInstructionsToggle, SevenCandlesInstructionsLink, SevenCandlesRelightButton, SevenCandlesButton } from "../styles/seven-candles.styles";
+import { RiddleWrapper, RiddleCandle, RiddleCandleContainer, SevenCandlesGlow, SevenCandlesShadow, SevenCandlesInner, SevenCandlesOuter, SevenCandlesInstructions, SevenCandlesInstructionsContent, SevenCandlesInstructionsToggle, SevenCandlesInstructionsLink, SevenCandlesRelightButton, RiddleCandleCounter } from "../styles/seven-candles.styles";
 
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";

@@ -26,11 +26,11 @@ const util = {
         } else {
             // Fallback
 
-            let { text, url, score } = shareConfig.dialog;
+            let { text, url } = shareConfig.dialog;
 
             MySweetAlert.fire({
                 title: '<strong>Share 7 Candles Riddle</strong>',
-                icon: 'share',
+                icon: 'info',
                 html:
                     '<div class="share-dialog is-open">' +
                     '<div class="share-header"> <h3 class="dialog-title"> Share This Riddle </h3> <button class="close-button"><svg><use href="#close"></use></svg></button> </div>' +
