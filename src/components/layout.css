@@ -62,7 +62,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 body {
-  background-color: #ecf0f1;
+  background-color: #0c2333;
   font-family: helvetica, arial, sans-serif;
   font-size: 16px;
   padding-top: 300px;
@@ -77,13 +77,11 @@ h2 {
   text-transform: uppercase;
   font-weight: 100;
   line-height: 2;
-  color: #2c3e50;
 }
 
 p {
   margin-bottom: 2rem;
   line-height: 2;
-  color: #7f8c8d;
 }
 
 .wrapper {
@@ -110,7 +108,7 @@ body.sticky-header {
 }
 body.sticky-header header {
   height: 60px;
-  background-color: rgba(52, 152, 219, 0.9);
+  background-color: #0c2333;
 }
 body.sticky-header header h1 {
   -moz-transform: scale(0, 0);

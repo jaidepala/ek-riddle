@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 export const RiddleHeader = styled.header`
     width: 100%;
     height: 300px;
-    background-color: #3498db;
+    background-color: #264b63;
     text-align: center;
     position: relative;
     position: fixed;
@@ -41,10 +41,9 @@ export const RiddleHeaderNav = styled.nav`
 
 const StyledLink = (props) => {
 
-    const { className, children, to, isActive } = props;
+    const { className, children, to } = props;
 
     return (
-        // <Link className={ className } to={ to } isActive={ isActive }>
         <Link className={ className } to={ to }>
             { children }
         </Link>

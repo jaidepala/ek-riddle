@@ -8,8 +8,9 @@ const About = () => {
     return (
         <Layout>
             <SEO title="About" />
-
-            About Page.
+            <section>
+                About Page.
+            </section>
         </Layout>
     );
 };

@@ -1,12 +1,11 @@
 import React from "react";
 
-import { RiddleSkewedBackground, RiddleFooter, RiddleFooterCredits, RiddleFooterLink } from '../styles/footer.styles';
+import { RiddleFooter, RiddleFooterCredits, RiddleFooterLink } from '../styles/footer.styles';
 
 const Footer = () => {
 
     return (
         <>
-            {/* <RiddleSkewedBackground></RiddleSkewedBackground> */}
             <RiddleFooter>
                 <RiddleFooterCredits>
                         by Jay Depala <br />
