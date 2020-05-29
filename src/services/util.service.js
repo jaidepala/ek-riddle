@@ -26,7 +26,7 @@ const util = {
         } else {
             // Fallback
 
-            let { text, url } = shareConfig.dialog;
+            let { text, url } = shareConfig;
 
             MySweetAlert.fire({
                 title: '<strong>Share 7 Candles Riddle</strong>',
@@ -36,7 +36,7 @@ const util = {
                     '<div class="share-header"> <h3 class="dialog-title"> Share This Riddle </h3> <button class="close-button"><svg><use href="#close"></use></svg></button> </div>' +
                     '<div class="targets">' +
                     '<a class="share-dialog-button" href="https://www.facebook.com/sharer/sharer.php?u=' + url +'" target="_blank"> <svg> <use></use><span>Facebook</span></a >' +
-                    '<a class="share-dialog-button" href="https://twitter.com/share?url=' + url + '&text=' + text +'&via=@jaidepala" target="_blank"> <svg> <use></use> <span>Twitter</span> </a>' +
+                    '<a class="share-dialog-button" href="https://twitter.com/share?url=' + url + '&text=' + text +'&via=jaidepala" target="_blank"> <svg> <use></use> <span>Twitter</span> </a>' +
                     '<a class="share-dialog-button" href="https://www.linkedin.com/shareArticle?url=' + url + '&title=' + text +'" target="_blank"> <svg> <use></use> <span>LinkedIn</span> </a>' +
                     '<a class="share-dialog-button" href="mailto:?subject=Checkout My Score&body='+ text + '\n\n' + url +'title="Share by Email" target="_blank"> <svg> <use></use> <span>Email</span> </a>' +
                     '</div>' +

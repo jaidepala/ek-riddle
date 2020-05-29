@@ -142,7 +142,7 @@ class SecenCandlesComponent extends Component {
                 if(result.value)
                 {
                     util.shareDialog({
-                        text: "Hey! I was able to solve the 7 candles riddle in " + count + " steps.\n\nCan you solve it fewer steps?",
+                        text: "Hey! I was able to solve the 7 candles riddle in " + count + " steps.\n\nCan you solve it fewer steps?\n\n",
                         url: window.document.querySelector('link[rel=canonical]') ? (window.document.querySelector('link[rel=canonical]') && window.document.querySelector('link[rel=canonical]').href) : window.document.location.href,
                         dialog: {
                             score: count

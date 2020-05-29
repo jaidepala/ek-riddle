@@ -9,6 +9,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
+import Image from '../components/image';
+
 const StyledLink = (props) => {
 
     const { className, children, to } = props;
@@ -19,13 +21,24 @@ const StyledLink = (props) => {
         </Link>
     );
 };
+const StyledImage = (props) => {
+
+    const { className, children } = props;
+
+    return (
+        <img className={className}>
+            {children}
+        </img>
+    );
+};
 
 export const RiddleListLi = styled.li`
-    background: url("https://bradfrost.github.com/this-is-responsive/patterns/images/icon_arrow_right.png") no-repeat 97% 50%;
     border-bottom: 1px solid #ccc;
     display: table;
     border-collapse: collapse;
+    text-decoration: none;
     width: 100%;
+    color: #fff;
 
     @media all and (min-width: 45em) {
         float: left;
@@ -37,7 +50,16 @@ export const RiddleListLi = styled.li`
     }
 `;
 
-export const RiddleListInner = styled(StyledLink)`
+export const RiddleListLink = styled(StyledLink)`
+
+    text-decoration: none;
+
+    &:hover, &:visited {
+        text-decoration: none;
+    }
+`;
+
+export const RiddleListInner = styled.div`
     display: table-row;
     overflow: hidden;
 `;
@@ -49,10 +71,20 @@ export const RiddleListImgContainer = styled.div`
     padding-right: 1em;
 `;
 
-export const RiddleListImg = styled.img`
+export const RiddleListImg = styled.div`
     display: block;
-    width: 100%;
-    height: auto;
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    & > img  {
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 `;
 
 export const RiddleListText = styled.div`
@@ -62,9 +94,11 @@ export const RiddleListText = styled.div`
 `;
 
 export const RiddleListTextHead = styled.h4`
+    color: #fff;
     margin: 0;
     line-height: 1.4;
     padding: 0.2rem;
+    font-size: x-large;
 `;
     
 export const RiddleListTextSubHead = styled.p`

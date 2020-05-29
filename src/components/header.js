@@ -37,14 +37,13 @@ const Header = ({ siteTitle, ...otherProps }) => {
 
     useEffect(() => {
         const removeListener = globalHistory.listen(params => {
-            const { location } = params
-            const newState = { ...initialState, location }
-
-            console.log('newState', newState)
-            setState(newState)
+            const { location } = params;
+            const newState = { ...initialState, location };
+            
+            setState(newState);
         })
         return () => {
-            removeListener()
+            removeListener();
         }
     }, []);
 
@@ -64,9 +63,6 @@ const Header = ({ siteTitle, ...otherProps }) => {
                 </RiddleHeaderLink>
                 <RiddleHeaderLink to="/about" className={(currentState === "/about") && 'active'}>
                     About
-                </RiddleHeaderLink>
-                <RiddleHeaderLink to="/contact" className={(currentState === "/contact") && 'active'}>
-                    Contact
                 </RiddleHeaderLink>
             </RiddleHeaderNav>
         </RiddleHeader>
