@@ -7,6 +7,13 @@ import React, { Component } from 'react';
     *   
 */
 import { Helmet } from "react-helmet";
+/* 
+    !   REF for google analytics
+    *   
+    *   https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/
+    *   
+*/
+import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -107,6 +114,13 @@ class SecenCandlesComponent extends Component {
 
     litEveryone = () => {
 
+        trackCustomEvent({
+            category: "Replayed Riddle",
+            action: "click",
+            label: "Relight",
+            value: 1
+        });
+
         this.setState({
             count: 0
         });
@@ -141,6 +155,13 @@ class SecenCandlesComponent extends Component {
             }).then((result) => {
                 if(result.value)
                 {
+                    trackCustomEvent({
+                        category: "Solved Riddle",
+                        action: "play",
+                        label: "Seven Candles",
+                        value: count
+                    });
+
                     util.shareDialog({
                         text: "Hey! I was able to solve the 7 candles riddle in " + count + " steps.\n\nCan you solve it fewer steps?\n\n",
                         url: window.document.querySelector('link[rel=canonical]') ? (window.document.querySelector('link[rel=canonical]') && window.document.querySelector('link[rel=canonical]').href) : window.document.location.href,
